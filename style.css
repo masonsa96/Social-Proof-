@@ -246,7 +246,7 @@ article {
     }
 
     .star-card {
-        flex-direction: column;
+        justify-content: center;
         width: 100%;
     }
 
@@ -259,5 +259,11 @@ article {
         flex-direction: column;
         gap: .5rem;
         margin-top: 2rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .star-card {
+        flex-direction: column;
     }
 }
