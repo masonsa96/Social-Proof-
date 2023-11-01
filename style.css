@@ -1,0 +1,263 @@
+/* Basic CSS Reset */
+
+/* Box sizing rules */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class], ol[class] {
+    padding: 0;
+}
+
+/* Remove default margin */
+body, h1, h2, h3, h4, h5, h6, p, ul[class], ol[class], figure, blockquote, dl, dd {
+    margin: 0;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class], ol[class] {
+    list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+    margin-top: 1em;
+}
+
+/* Inherit fonts for form inputs */
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+:root {
+    /* Colors */
+
+    /* Primary */
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+
+    /* Neutral */
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Typography */
+
+    /* Body Copy */
+    --font-size-body: 15px;
+
+    /* Font */
+    --font-family-league-spartan: 'League Spartan', sans-serif;  /* Remember to link the font in your HTML or import it in CSS */
+    --font-weight-400: 400;
+    --font-weight-500: 500;
+    --font-weight-700: 700;
+}
+
+/* Example usage */
+body {
+    font-family: var(--font-family-league-spartan);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-400);
+    color: var(--very-dark-magenta);
+}
+
+
+body {
+    font-family: 'League Spartan', sans-serif;
+    background: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: top 0 left 0%, bottom 0% right 0%;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 5rem;
+}
+
+/* Title Section */
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.heading {
+    font-size: 45px;
+    line-height: 1;
+    width: 20rem;
+}
+
+.product-info p {
+    color: var(--dark-grayish-magenta);
+    font-size: 16px;
+    width: 23rem;
+}
+
+/* Star Section */
+
+.star-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.star-card {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background-color: var(--light-grayish-magenta);
+    border-radius: .25rem;
+    width: 85%;
+    padding: 1rem;
+    font-weight: var(--font-weight-700);
+}
+
+.five-stars {
+    display: flex;
+    gap: .5rem;
+    padding: 0rem 1rem;
+}
+
+.five-stars img {
+    height: 15px;
+}
+
+.star-card:nth-child(1) {
+    transform: translateY(0px);
+}
+
+.star-card:nth-child(2) {
+    transform: translateX(40px);
+}
+
+.star-card:nth-child(3) {
+    transform: translateX(80px);
+}
+
+/* Testimonial Cards */
+
+.card-container {
+    display: flex;
+    gap: 2rem;
+    grid-column: 1 / 4;
+}
+
+.card {
+    background-color: var(--very-dark-magenta);
+    color: var(--white);
+    border-radius: .5rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.profile {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.photo {
+    border-radius: 50%;
+    height: 1.5rem;
+    outline: 1px solid var(--light-grayish-magenta);
+}
+
+
+.name {
+    font-weight: var(--font-weight-500);
+    font-size: 16px;
+}
+
+.buyer {
+    color: var(--soft-pink);
+}
+
+
+.card-container:nth-child(1) {
+    transform: translateY(0px);
+}
+
+.card:nth-child(2) {
+    transform: translateY(15px);
+}
+
+.card:nth-child(3) {
+    transform: translateY(30px);
+}
+
+@media (max-width: 950px) {
+    article {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .product-info {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .product-info p {
+        color: var(--dark-grayish-magenta);
+        font-size: 18px;
+        width: 100%;
+    }
+
+    .star-card {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .star-card:nth-child(-n+3) {
+        transform: none;
+    }
+
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        margin-top: 2rem;
+    }
+}
